@@ -1,0 +1,215 @@
+/*=====================================================*/
+/* Broad Changes                                       */
+/*=====================================================*/
+body {
+    background-color: #0e0e0e;
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Courier New";
+    font-size: 16px;
+    color: #cdcdcd;
+}
+
+a, button {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, button:hover {
+    color: #00ff8c;
+}
+
+main {
+    flex-grow: 1;
+    /* Replace the 2 with the number of columns (for when I have more than 2 projects) */
+    max-width: calc(2 * (400px + 1rem) - 1rem);
+    margin: 0 auto;
+}
+
+/*=====================================================*/
+/* Header                                              */
+/*=====================================================*/
+html {
+    scroll-padding-top: 3rem;
+}
+
+.site-header {
+    background-color: #080808;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 3rem;
+    position: sticky;
+    top: 0;
+    padding: 0rem 0.5rem;
+}
+
+.site-header a, .site-header button {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.nav-title a {
+    text-decoration: none;
+}
+.nav-title a.name-init {
+    display:none;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+.nav-button {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+/*=====================================================*/
+/* Sections                                            */
+/*=====================================================*/
+
+.content-section {
+    padding: 1rem 0;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.content-section p {
+    padding: 0 1rem;
+}
+
+.section-line {
+    height: 2px;
+    width: 100%;
+    background-color: #080808;
+    padding: 0 2rem;
+    margin: 0 -2rem;
+}
+
+.projects-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1rem;
+    row-gap:1rem;
+    width: 100%;
+}
+
+.project-card {
+    background-color: #080808;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    margin: 2px;
+    max-width: 400px;
+    padding-bottom: 1rem;
+}
+
+.project-card:hover {
+    margin: 0;
+    border: 2px solid #00ff8c;
+    color: #00ff8c;
+    cursor: pointer;
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    padding-bottom: 1rem;
+}
+
+.project-card p {
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.project-title {
+    font-weight: bold;
+    font-size: larger;
+    text-decoration: underline;
+}
+
+.job-title {
+    font-weight: bolder;
+}
+
+/*=====================================================*/
+/* Footer                                              */
+/*=====================================================*/
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 1rem;
+    background-color: #080808;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: center;
+    /* background-color: green; */
+    gap: 0.8rem;
+}
+
+.social-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    width: 1.5rem;
+}
+
+.social-icon {
+    width: 100%;
+}
+
+/*=====================================================*/
+/* Dynamic Sizing                                      */
+/*=====================================================*/
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+        background-color: #080808;
+    }
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        width: 100%;
+    }
+    .nav-links.show a {
+        width: 100%;
+    }
+    .nav-button {
+        display: block;
+    }
+    .site-footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 250px) {
+    .nav-title a.name-full {
+        display: none;
+    }
+    .nav-title a.name-init {
+        display: block;
+    }
+}
