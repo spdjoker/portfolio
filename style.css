@@ -2,7 +2,7 @@
 /* Broad Changes                                       */
 /*=====================================================*/
 body {
-    background-color: #0e0e0e;
+    background-color: #131313;
     min-height: 100vh;
     margin: 0;
 
@@ -11,7 +11,7 @@ body {
 
     font-family: "Courier New";
     font-size: 16px;
-    color: #cdcdcd;
+    color: #dfdfdf;
 }
 
 a, button {
@@ -95,16 +95,17 @@ html {
 
 .section-line {
     height: 2px;
-    width: 100%;
+    max-width: 100vw;
+    width: calc(100% + 4rem);
     background-color: #080808;
-    padding: 0 2rem;
-    margin: 0 -2rem;
+    margin: 0 -2rem; 
 }
 
 .projects-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 400px));
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
     gap: 1rem;
     row-gap:1rem;
     width: 100%;
@@ -209,7 +210,7 @@ html {
     }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 300px) {
     .nav-title a.name-full {
         display: none;
     }
